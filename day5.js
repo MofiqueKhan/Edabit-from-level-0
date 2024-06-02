@@ -223,9 +223,9 @@ function chineseZodiac(birthyear) {
 
   return zodiac[index];
 }
-console.log(chineseZodiac(2021), "Ox");
+// console.log(chineseZodiac(2021), "Ox");
 
-console.log(chineseZodiac(2020), "Rat");
+// console.log(chineseZodiac(2020), "Rat");
 
-console.log(chineseZodiac(1933), "Rooster");
+// console.log(chineseZodiac(1933), "Rooster");
 
