@@ -181,8 +181,29 @@ function arrayLessThan100(arr) {
   }
   return sum <= 100;
 }
-console.log(arrayLessThan100([5, 57]), true);
+// console.log(arrayLessThan100([5, 57]), true);
 
-console.log(arrayLessThan100([77, 30]), false);
+// console.log(arrayLessThan100([77, 30]), false);
 
-console.log(arrayLessThan100([0]), true);
+// console.log(arrayLessThan100([0]), true);
+
+// 60.
+// Create a function that returns the last value of the last item in an array or string.
+
+// Examples
+function lastItem(arr) {
+  let result;
+  for (let i = 0; i < arr.length; i++) {
+    result = arr[arr.length - 1];
+  }
+  return result; 
+}
+// console.log(lastItem([0, 4, 19, 34, 50, -9, 2]), 2);
+
+// console.log(lastItem("The quick brown fox jumped over the lazy dog"), "g");
+
+// console.log(lastItem([]), undefined);
+// Notes
+// Arrays/strings will be of varying size.
+// Return undefined if array/string is empty.
+
