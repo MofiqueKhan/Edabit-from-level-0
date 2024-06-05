@@ -128,12 +128,12 @@ function countUppercase(arr) {
 // Therefore, solution = [true, false, true, false, false]
 // Examples
 function oddSum(arr) {
-    let result = []
-    for(let i = 0 ;  i < arr.length ; i++){
-        let sum = arr[i] + arr[i +1]
-        result.push(sum % 2 === 0)
-    }
-    return result 
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let sum = arr[i] + arr[i + 1];
+    result.push(sum % 2 === 0);
+  }
+  return result;
 }
 // console.log(oddSum([11, 15, 6, 8, 9, 10]), [true, false, true, false, false]);
 
@@ -147,20 +147,43 @@ function oddSum(arr) {
 // Create a function that takes an array arr of numbers and moves all zeros to the end, preserving the order of the other elements.
 
 // Examples
-function moveZeros(arr){
-    let result = [];
-    let zeros = 0;
-    for(let i = 0 ; i < arr.length ; i++){
-        arr[i] !== 0 ? result.push(arr[i]) : zeros++
-    }
+function moveZeros(arr) {
+  let result = [];
+  let zeros = 0;
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] !== 0 ? result.push(arr[i]) : zeros++;
+  }
 
-    for(let i = 0 ; i < zeros ; i++){
-        result.push(0)
-    }
-    return result
+  for (let i = 0; i < zeros; i++) {
+    result.push(0);
+  }
+  return result;
 }
 // console.log( moveZeros([1, 0, 1, 2, 0, 1, 3]) , [1, 1, 2, 1, 3, 0, 0]);
 
 // console.log( moveZeros([0, 1, null, 2, false, 1, 0]) , [1, null, 2, false, 1, 0, 0]);
 
 // console.log( moveZeros(['a', 0, 0, 'b', 'c', 'd', 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]) , ['a', 'b', 'c', 'd', 1, 1, 3, 1, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+// 67.
+// Given a 2D-list of letters arr and a list of indexes idx, find the letters on given indexes and return as a string.
+
+// You have to find the characters in these indexes of the given list if you think of the indexes as:
+function arrIndex(arr, idx) {
+  let flatList = [];
+  for (let row of arr) {
+    flatList = flatList.concat(row);
+  }
+  let zeroBasedIndexes = idx.map((i) => i - 1);
+  let characters = zeroBasedIndexes.map((i) => flatList[i]);
+  return characters.join("");
+}
+const arr = [
+  ["m", "u", "b"],
+  ["a", "s", "h"],
+  ["i", "r", "1"],
+];
+
+const idx = [1, 3, 5, 8];
+
+console.log(arrIndex(arr, idx), "mbsr");
