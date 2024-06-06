@@ -186,4 +186,67 @@ const arr = [
 
 const idx = [1, 3, 5, 8];
 
-console.log(arrIndex(arr, idx), "mbsr");
+// console.log(arrIndex(arr, idx), "mbsr");
+
+// 68.
+// Create a function to calculate how many characters in total are needed to make up the shape. You will be given an array of strings which make up a shape in the compiler (i.e. a square, a rectangle or a line).
+
+// Examples
+function countCharacters(arr){
+  let result = 0;
+  for(let words of arr){
+    for(let char of words){
+      result++
+    }
+  }
+  return result
+}
+// console.log(countCharacters(["###", "###", "###"]), 9);
+
+// console.log(countCharacters(["22222222", "22222222"]), 16);
+
+// console.log(countCharacters(["------------------"]), 18);
+
+// console.log(countCharacters([]), 0);
+
+// console.log(countCharacters(["", ""]), 0);
+
+// 69.
+// Create a function that takes an array of numbers nums as an argument. Square each number in the array if the number is even and square root √ the number if it is odd. Return the sum of the new array rounded to two decimal places.
+
+// Example:
+
+ // [2, 4, 9]  , 23
+// 2 ^ 2 + 4 ^ 2 + √9 = 4 + 16 + 3 = 23
+// Examples
+function arraySum(arr){
+  let result = 0;
+  for(let i = 0 ; i < arr.length ; i++){
+    if(arr[i] % 2 === 0){
+      result += Math.pow(arr[i] , 2)
+    }
+    else{
+      result += Math.sqrt(arr[i])
+    }
+  }
+  return parseFloat(result.toFixed(2))
+}
+// console.log(arraySum([1, 3, 3, 1, 10]) , 105.46);
+
+// console.log(arraySum([2, 3, 4, 5]) , 23.97);
+
+// console.log(arraySum([1, 31, 3, 11, 0]) , 11.62);
+
+// 70.
+// Create a function that returns the original value from a matrix with too many sub-arrays.
+
+// Examples
+function deNest(arr){
+  return arr.flat(Infinity).pop()
+}
+// console.log( deNest([[[[[[[[[[[[3]]]]]]]]]]]]) , 3);
+
+// console.log( deNest([[[[[[[true]]]]]]]) , true);
+
+// console.log( deNest([[[[[[[[[[[[[[[[["edabit"]]]]]]]]]]]]]]]]]) , "edabit");
+
