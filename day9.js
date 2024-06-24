@@ -105,6 +105,8 @@ function canCapture(arr) {
 
 // console.log(canCapture(["F5", "C8"]), false);
 
+// 86.
+
 // Create a function that returns true if two arrays sharing the same length have identical numerical values at every index, and false otherwise.
 
 // To solve this question, your friend initially wrote the following code (see this challenge):
@@ -155,3 +157,42 @@ function checkEquals(arr1 , arr2){
 // console.log( checkEquals([4, 7, 6], [4, 5, 6]) , false);
 
 // console.log( checkEquals([1, 12], [11, 2]) , false);
+
+// 87.
+// Create a function that adds a string ending to each member in an array.
+
+// Examples
+function addEnding(arr , ending){
+  // let result = []
+  // for(let i = 0 ; i < arr.length ; i++){
+  //   result.push(arr[i] + ending) 
+  // }
+  // return result
+
+  return arr.map((e)=> e + ending)
+}
+// console.log( addEnding(["clever", "meek", "hurried", "nice"], "ly")
+// , ["cleverly", "meekly", "hurriedly", "nicely"]);
+
+// console.log( addEnding(["new", "pander", "scoop"], "er")
+// , ["newer", "panderer", "scooper"]);
+
+// console.log( addEnding(["bend", "sharpen", "mean"], "ing")
+// , ["bending", "sharpening", "meaning"]);
+
+// 88.
+// Implement a function that returns an array containing all the consecutive numbers in ascendant order from the given value low up to the given value high (bounds included).
+
+// Examples
+function getSequence(low , high){
+  let sequence = [];
+  for(let i = low ; i <= high ; i++){
+    sequence.push(i)
+  }
+  return sequence
+}
+console.log( getSequence(1, 5) , [1, 2, 3, 4, 5]);
+
+console.log( getSequence(98, 100) , [98, 99, 100]);
+
+console.log( getSequence(1000, 1000) , [1000]);
